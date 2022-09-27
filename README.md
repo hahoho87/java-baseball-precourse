@@ -24,10 +24,10 @@
 
 ## 기능 목록
 - [x] 컴퓨터는 1에서 9까지 서로 다른 3개의 임의의 수를 생성
-- [ ] 플레이어는 3개의 숫자를 입력
-    - [ ] 숫자가 아닌 경우 IllegalArgumentException 발생
-    - [ ] 서로 다른 숫자를 입력하지 않았을 경우 IllegalArgumentException 발생
-    - [ ] 3자리 숫자가 아닌 경우 IllegalArgumentException 발생
+- [x] 플레이어는 3개의 숫자를 입력
+    - [x] 숫자가 아닌 경우 IllegalArgumentException 발생
+    - [x] 서로 다른 숫자를 입력하지 않았을 경우 IllegalArgumentException 발생
+    - [x] 3자리 숫자가 아닌 경우 IllegalArgumentException 발생
 - [ ] 컴퓨터와 플레이어의 숫자를 비교
     - [ ] 숫자와 위치가 모두 일치하면 스트라이크
     - [ ] 숫자는 일치하지만 위치가 일치하지 않으면 볼
