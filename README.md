@@ -28,14 +28,14 @@
     - [x] 숫자가 아닌 경우 IllegalArgumentException 발생
     - [x] 서로 다른 숫자를 입력하지 않았을 경우 IllegalArgumentException 발생
     - [x] 3자리 숫자가 아닌 경우 IllegalArgumentException 발생
-- [ ] 컴퓨터와 플레이어의 숫자를 비교
-    - [ ] 숫자와 위치가 모두 일치하면 스트라이크
-    - [ ] 숫자는 일치하지만 위치가 일치하지 않으면 볼
-    - [ ] 숫자와 위치가 모두 일치하지 않으면 낫싱
-    - [ ] 숫자와 위치가 모두 일치하면 게임 종료
-        - [ ] 게임 종료 후 게임을 다시 시작하거나 완전히 종료
-- [ ] 프로그래밍 제약사항 체크
-    - [ ] 자바 코드 컨벤션을 지키면서 프로그래밍
+- [x] 컴퓨터와 플레이어의 숫자를 비교
+    - [x] 숫자와 위치가 모두 일치하면 스트라이크
+    - [x] 숫자는 일치하지만 위치가 일치하지 않으면 볼
+    - [x] 숫자와 위치가 모두 일치하지 않으면 낫싱
+    - [x] 숫자와 위치가 모두 일치하면 게임 종료
+        - [x] 게임 종료 후 게임을 다시 시작하거나 완전히 종료
+- [x] 프로그래밍 제약사항 체크
+    - [x] 자바 코드 컨벤션을 지키면서 프로그래밍
         - [JavaCodeConvention](https://github.com/woowacourse/woowacourse-docs/tree/master/styleguide/java)
         - indent 1
         - Stream api 사용 금지
