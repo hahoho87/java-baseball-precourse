@@ -9,9 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
-
-import baseball.enums.Result;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class ScoreCalculatorTest {
 
@@ -24,17 +22,18 @@ class ScoreCalculatorTest {
 	}
 
 	@Test
-	@DisplayName("세 자리 수가 모두 일치하면 Result.WIN 리턴")
+	@DisplayName("세 자리 수가 모두 일치하면 3스트라이크 0볼")
 	void strikeTest() {
 		// given
 		BallNumbers userBallNumbers = BallNumbers.of(defaultNumbers);
 
 		// when
 		ScoreCalculator calculator = new ScoreCalculator(computerBallNumbers);
-		Result result = calculator.calculateScore(userBallNumbers);
+		Score score = calculator.calculateScore(userBallNumbers);
 
 		// then
-		assertThat(result).isEqualTo(Result.WIN);
+		assertThat(score.getStrike()).isEqualTo(3);
+		assertThat(score.getBall()).isZero();
 	}
 
 	@Test
@@ -46,34 +45,27 @@ class ScoreCalculatorTest {
 
 		// when
 		ScoreCalculator calculator = new ScoreCalculator(computerBallNumbers);
-		Result result = calculator.calculateScore(userBallNumbers);
+		Score score = calculator.calculateScore(userBallNumbers);
 
 		// then
-		assertThat(result).isEqualTo(Result.NOTHING);
+		assertThat(score.getStrike()).isZero();
+		assertThat(score.getBall()).isZero();
 	}
 
 	@ParameterizedTest
-	@MethodSource("provideNumbers")
+	@CsvSource(value = {"1,2,4,2,0", "1,4,2,1,1", "4,3,1,0,2", "3,1,2,0,3"})
 	@DisplayName("세 자리 숫자가 모두 일치하지 않지만, 낫싱이 아니라면 Result.NOTHING 리턴")
-	void continueTest(List<Integer> numbers) {
+	void continueTest(int first, int second, int third, int strike, int ball) {
 		// given
+		List<Integer> numbers = Arrays.asList(first, second, third);
 		BallNumbers userBallNumbers = BallNumbers.of(numbers);
 
 		// when
 		ScoreCalculator calculator = new ScoreCalculator(computerBallNumbers);
-		Result result = calculator.calculateScore(userBallNumbers);
+		Score score = calculator.calculateScore(userBallNumbers);
 
 		// then
-		assertThat(result).isEqualTo(Result.CONTINUE);
+		assertThat(score.getStrike()).isEqualTo(strike);
+		assertThat(score.getBall()).isEqualTo(ball);
 	}
-
-	static List<List<Integer>> provideNumbers() {
-		return Arrays.asList(
-			Arrays.asList(2, 4, 5),
-			Arrays.asList(3, 1, 5),
-			Arrays.asList(5, 2, 1),
-			Arrays.asList(1, 7, 4)
-		);
-	}
-
 }

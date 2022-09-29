@@ -1,5 +1,5 @@
 package baseball.enums;
 
-public enum Result {
+public enum ResultStatus {
 	WIN, NOTHING, CONTINUE
 }

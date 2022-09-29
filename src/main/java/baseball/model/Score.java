@@ -2,12 +2,12 @@ package baseball.model;
 
 public class Score {
 
-	private int strike;
-	private int ball;
+	private final int strike;
+	private final int ball;
 
-	public Score() {
-		this.strike = 0;
-		this.ball = 0;
+	public Score(int strikeCount, int ballCount) {
+		this.strike = strikeCount;
+		this.ball = ballCount;
 	}
 
 	public int getStrike() {
@@ -18,14 +18,6 @@ public class Score {
 		return this.ball;
 	}
 
-	public void addStrike() {
-		this.strike++;
-	}
-
-	public void addBall() {
-		this.ball++;
-	}
-
 	public boolean isNothing() {
 		return this.strike == 0 && this.ball == 0;
 	}
@@ -33,4 +25,5 @@ public class Score {
 	public boolean isWin() {
 		return this.strike == 3;
 	}
+
 }
