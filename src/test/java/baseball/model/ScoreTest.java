@@ -40,4 +40,27 @@ class ScoreTest {
 		assertThat(score.getBall()).isEqualTo(1);
 	}
 
+	@Test
+	@DisplayName("strike 와 ball 개수가 모두 0 이면 isNothing() 메서드가 true 를 리턴한다.")
+	void isNothingTest() {
+		// given
+		Score score = new Score();
+		// when
+		// then
+		assertThat(score.isNothing()).isTrue();
+	}
+
+	@Test
+	@DisplayName("strike 개수가 3 이면 isWin() 메서드가 true 를 리턴한다.")
+	void isWinTest() {
+		// given
+		Score score = new Score();
+		// when
+		score.addStrike();
+		score.addStrike();
+		score.addStrike();
+		// then
+		assertThat(score.isWin()).isTrue();
+	}
+
 }

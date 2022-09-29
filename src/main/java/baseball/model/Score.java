@@ -25,4 +25,12 @@ public class Score {
 	public void addBall() {
 		this.ball++;
 	}
+
+	public boolean isNothing() {
+		return this.strike == 0 && this.ball == 0;
+	}
+
+	public boolean isWin() {
+		return this.strike == 3;
+	}
 }
