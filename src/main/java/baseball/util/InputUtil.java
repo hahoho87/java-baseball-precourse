@@ -20,13 +20,13 @@ public class InputUtil {
         int tempNumber;
         for (int i = 0; i < NUMBER_LENGTH; i++) {
             tempNumber = getInteger(getInput(input, i));
-            valdiateuplicateNumber(integers, tempNumber);
+            validateDuplicateNumber(integers, tempNumber);
             integers.add(tempNumber);
         }
         return integers;
     }
 
-    private static void valdiateuplicateNumber(List<Integer> integers, int tempNumber) {
+    private static void validateDuplicateNumber(List<Integer> integers, int tempNumber) {
         if (integers.contains(tempNumber)) {
             throw new IllegalArgumentException(INVALID_NUMBER_DUPLICATION_ERROR_MESSAGE);
         }

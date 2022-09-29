@@ -14,10 +14,8 @@ class ComputerTest {
     void generateThreeNumberTest() {
         // given
         Computer computer = new Computer();
-
         // when
         List<Integer> numbers = computer.getNumbers();
-
         // then
         assertThat(numbers).hasSize(3);
     }
