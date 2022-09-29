@@ -15,19 +15,19 @@ public class ScoreCalculator {
 
     public Score calculateScore(BallNumbers userBallNumbers) {
         for (int i = ZERO; i < computerBallNumbers.getNumberSize(); i++) {
-            calculateStrike(userBallNumbers, i);
-            calculateBall(userBallNumbers, i);
+            addStrikeCount(userBallNumbers, i);
+            addBallCount(userBallNumbers, i);
         }
         return new Score(strikeCount, ballCount);
     }
 
-    private void calculateBall(BallNumbers userBallNumbers, int i) {
+    private void addBallCount(BallNumbers userBallNumbers, int i) {
         if (isBall(userBallNumbers, i)) {
             ballCount++;
         }
     }
 
-    private void calculateStrike(BallNumbers userBallNumbers, int i) {
+    private void addStrikeCount(BallNumbers userBallNumbers, int i) {
         if (isStrike(userBallNumbers, i)) {
             strikeCount++;
         }

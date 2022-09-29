@@ -5,12 +5,14 @@ import java.util.List;
 
 public class InputUtil {
 
-    public static final String INVALID_NUMBER_FORMAT_ERROR_MESSAGE = "숫자를 입력해주세요.";
-    public static final String INVALID_NUMBER_LENGTH_ERROR_MESSAGE = "3자리 숫자를 입력해주세요.";
-    public static final String INVALID_NUMBER_DUPLICATION_ERROR_MESSAGE = "중복되지 않은 숫자를 입력해주세요.";
+    public static final String NEXT_LINE = "\n";
+    private static final String INVALID_NUMBER_FORMAT_ERROR_MESSAGE = "숫자를 입력해주세요.";
+    private static final String INVALID_NUMBER_LENGTH_ERROR_MESSAGE = "3자리 숫자를 입력해주세요.";
+    private static final String INVALID_NUMBER_DUPLICATION_ERROR_MESSAGE = "중복되지 않은 숫자를 입력해주세요.";
     private static final int NUMBER_LENGTH = 3;
 
-    private InputUtil() {}
+    private InputUtil() {
+    }
 
     public static List<Integer> getUserNumbers(String input) {
 
